@@ -1,1 +1,5 @@
-//Solution goes in Sources
+class ETL {
+	func transform(old:[Int]) -> Int {
+		return 1
+	}
+}
