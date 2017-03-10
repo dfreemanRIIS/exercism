@@ -1,19 +1,19 @@
 import Foundation
 
-//USER INPUT
-print("Enter word")
-let string:String = (readLine() ?? "")
-let characters = Array(string.characters)
-var length = string.characters.count
+class Isogram {
+	static func isIsogram(_ string:String) -> Bool {
+		let newString = string.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
+		let characters = Array(newString.characters)
+		let length = newString.characters.count
+		var used = ""
 
-//USED CHAR
-var used = ""
-
-for i in 0..<length {
-	if used.lowercased().range(of:characters[i]) != nil {
-		print("double")
-	} else {
-		var.append(character[i])
-		print("good")
+		for i in 0..<length {
+			if used.lowercased().range(of:String(characters[i])) != nil {
+				return false
+			} else {
+				used.append(characters[i])
+			}
+		}
+		return true
 	}
 }
